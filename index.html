@@ -26,7 +26,30 @@
         }
 
         .header {
-            padding: 3em 0;
+            padding: 6em 2em;
+            background-image: url('https://images.unsplash.com/photo-1632936715846-666b1f3ee224?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.45);
+        }
+
+        .header h1,
+        .header .subhead,
+        .header .byline {
+            position: relative;
+            z-index: 1;
         }
 
         a {
@@ -34,7 +57,7 @@
         }
 
         .footer {
-            background: #f4f4f4;
+            background: rgba(128, 0, 32, 0.3);
             text-align: center;
             font-size: 0.8em;
             margin-top: 4em;
@@ -111,27 +134,17 @@
 </head>
 
 <body>
+    <div class="header">
+        <h1>Poland has become Europe's unlikely vinophile</h1>
+        <p class="subhead">Here is the subhead or additional content you want to add in</p>
+        <p class="byline">By Luiza Swierzawska</p>
+    </div>
     <div class="content">
-        <div class="header">
-            <h1>Poland has become Europe’s unlikely vinophile</h1>
-            <p class="subhead">Here is the subhead or additional content you want to add in</p>
-        </div>
-        <div class="byline">
-            <p>By Luiza Swierzawska</p>
-        </div>
         <p>Climate change has changed the demographics of wine production. 
             Rising temperatures have redefined the lines of winemaking regions, revealing some new contenders. 
             In Europe, the shift was <a href="https://europeancorrespondent.com/en/r/europes-grapes-are-moving-north">northwards</a> 
             with Poland leading this transformation. 
 </p>
-
-<div class="full-width">
-        <figure>
-            <img
-                src="https://unsplash.com/photos/a-bunch-of-grapes-hanging-from-a-tree-CuSmwZGSW6s">
-            <figcaption>Photo credits: Dominik Hofbauer</figcaption>
-        </figure>
-    </div>
 
         <p>As Victoria Brzezinski <a href="https://www.vogue.co.uk/article/polish-wine-guide">wrote</a> for the British Vogue Magazine, 
             it’s an unexpected turn of events seemingly far from “a land of potato and grain, tinnies of Tyskie and the clinks 
@@ -161,55 +174,9 @@
         alt="Where Polish wine comes from (Choropleth map)" /></noscript>
 </div>
 
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-            aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-            dolores eos qui ratione voluptatem sequi nesciunt.</p>
-        <figure>
-            <img
-                src="https://static01.nyt.com/images/2024/02/01/multimedia/01eu-hungary-orban-2-ghkw/01eu-hungary-orban-2-ghkw-superJumbo.jpg?quality=75&auto=webp">
-            <figcaption>This is an image caption</figcaption>
-        </figure>
-        <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
-            numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima
-            veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
-            consequatur?</p>
-    </div>
-    <div class="full-width">
-        <figure>
-            <img
-                src="https://static01.nyt.com/images/2024/02/01/multimedia/01eu-hungary-orban-2-ghkw/01eu-hungary-orban-2-ghkw-superJumbo.jpg?quality=75&auto=webp">
-            <figcaption>This is another image caption, but this time it's a full-width image</figcaption>
-        </figure>
-    </div>
-    <div class="content">
-        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
-            sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi
-            optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est,
-            omnis dolor repellendus.</p>
-    </div>
-    <div class="full-width">
-        <figure>
-            <video src="bg-video.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
-            <figcaption>This is an auto-play video. I had to edit the CSS from the original form a little, added
-                <code>max-width: 100%</code> for the <code>video</code> tag.</figcaption>
-        </figure>
-    </div>
-    <div class="content">
-        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
-            atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique
-            sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi
-            optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est,
-            omnis dolor repellendus.</p>
-    </div>
     <div class="footer">
         <div class="content">
-            <p>You can find the code for this template <a href="https://github.com/jsoma/page-templates/">here</a>.
-                Delete these lines
-                when you use it, and don't forget to change the <code>title</code> tag!!!</p>
+            <p>&copy; 2026 &mdash; Luiza Swierzawska</p>
         </div>
     </div>
 </body>

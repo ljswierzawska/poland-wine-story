@@ -26,13 +26,13 @@
         }
 
         .header {
-            padding: 6em 2em;
-            background-image: url('https://images.unsplash.com/photo-1632936715846-666b1f3ee224?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600');
-            background-size: cover;
-            background-position: center;
+            min-height: 100vh;
             color: white;
             text-align: center;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .header::before {
@@ -42,15 +42,38 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.45);
+            background-image: url('https://images.unsplash.com/photo-1632936715846-666b1f3ee224?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.55);
         }
 
-        .header h1,
-        .header .subhead,
-        .header .byline,
-        .header .photo-credit {
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                to top,
+                rgba(0, 0, 0, 0.60) 0%,
+                rgba(0, 0, 0, 0.0) 60%
+            );
+        }
+
+        .header-inner {
             position: relative;
-            z-index: 1;
+            z-index: 2;
+            width: 100%;
+            padding: 0 2em;
+            box-sizing: border-box;
+            text-shadow: 0 2px 24px rgba(0,0,0,0.85);
+        }
+
+        .header .photo-credit,
+        .header .date {
+            z-index: 2;
         }
 
         a {
@@ -119,22 +142,55 @@
         .header .photo-credit {
             position: absolute;
             bottom: 0.8em;
+            right: 1em;
+            font-size: 0.7em;
+            color: rgba(255, 255, 255, 0.7);
+            padding-bottom: 0;
+            margin: 0;
+            text-align: right;
+        }
+
+        .header .date {
+            position: absolute;
+            bottom: 0.8em;
             left: 1em;
             font-size: 0.7em;
             color: rgba(255, 255, 255, 0.7);
             padding-bottom: 0;
             margin: 0;
             text-align: left;
-        }
-
-        .date {
-            font-size: 0.85em;
-            color: #666;
-            padding-bottom: 2.5em;
+            z-index: 1;
         }
 
         .full-width figure {
             text-align: center;
+        }
+
+        .photo-break-wrapper {
+            position: relative;
+            overflow: hidden;
+            height: 60vh;
+            margin: 3em 0;
+        }
+
+        .photo-break {
+            position: absolute;
+            top: -25%;
+            left: 0;
+            right: 0;
+            bottom: -25%;
+            background-image: url('https://images.unsplash.com/photo-1701395467904-d0d9427bc47a?w=1600&q=85&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center 60%;
+            will-change: transform;
+        }
+
+        .photo-break-credit {
+            font-size: 0.8em;
+            text-align: center;
+            color: #666;
+            margin-top: -2em;
+            padding-bottom: 1.2em;
         }
 
         /* margin on mobile */
@@ -147,55 +203,51 @@
                 padding-left: 0.5em;
                 padding-right: 0.5em;
             }
+
         }
     </style>
 </head>
 
 <body>
     <div class="header">
-        <h1>Poland has become Europe's unlikely vinophile</h1>
-        <p class="byline">By Luiza Swierzawska</p>
+        <div class="header-inner">
+            <h1>Poland has become Europe's unlikely vinophile</h1>
+            <p class="byline">By Luiza Swierzawska</p>
+        </div>
+        <p class="date">February 16, 2026</p>
         <p class="photo-credit">Photo by Dominik Hofbauer / Unsplash</p>
     </div>
-    <div class="content">
-        <p class="date">February 16, 2026</p>
+    <div class="content" style="padding-top: 2em;">
 
-        <p>Climate change has changed the demographics of wine production. 
-            Rising temperatures have redefined the lines of winemaking regions, revealing some new contenders. 
+        <p>Climate change has altered the demographics of wine production. 
+            Rising temperatures have redefined the lines of winemaking regions, revealing new contenders. 
             In Europe, the shift was <a href="https://europeancorrespondent.com/en/r/europes-grapes-are-moving-north">northwards</a> 
             with Poland leading this transformation. 
 </p>
-
+        <p>Poland's wine production has grown steadily since 2009, with one exception: the 2017-18 season, 
+            when poor weather conditions battered vineyards across Europe. Italy, France and Spain saw 
+            <a href="https://www.oiv.int/public/medias/5681/en-communiqu-depresse-octobre-2017.pdf">similar drops</a>.
+</p>
+<div style="min-height:337px" id="datawrapper-vis-FbZmY">
+    <script type="text/javascript" defer src="https://datawrapper.dwcdn.net/FbZmY/embed.js" charset="utf-8" data-target="#datawrapper-vis-FbZmY"></script>
+    <noscript><img src="https://datawrapper.dwcdn.net/FbZmY/full.png" alt="Poland's transition into a wine-producing country (Small multiple line chart)" /></noscript></div>
+        <p>In 2009, Poland's <a href="https://notesfrompoland.com/2021/11/19/whites-and-reds-a-guide-to-polish-wine/#:~:text=Vineyards%20were%20once%20widespread%20in,the%20figure%20now%20is%20380.&text=Registered%20vineyards%20in%20Poland%20occupy,wine%20is%20increasing%20in%20popularity.">first legal commercial wine</a> reached the market. 
+            The milestone followed regulatory reforms that dismantled restrictive laws which had prevented homegrown winemakers 
+            from selling their bottles. The same year 21 vineyards declared commercial production.
+</p>
         <p>As Victoria Brzezinski <a href="https://www.vogue.co.uk/article/polish-wine-guide">wrote</a> for the British Vogue Magazine, 
             it’s an unexpected turn of events seemingly far from “a land of potato and grain, tinnies of Tyskie and the clinks 
             of vodka-filled shot glasses at every wedding.” But here we are, with over 700 registered wineries in Poland. 
 </p>
 
-        <p>With increasingly favorable conditions, a new generation of winemakers is driving the expansion of vineyards 
-            and the shift to wine grapes in Poland. 
-</p>
-<div style="min-height:761px" id="datawrapper-vis-FbZmY"><script 
-    type="text/javascript" defer src="https://datawrapper.dwcdn.net/FbZmY/embed.js" 
-    charset="utf-8" data-target="#datawrapper-vis-FbZmY"></script><noscript><img 
-        src="https://datawrapper.dwcdn.net/FbZmY/full.png" 
-        alt="Poland's transition into a wine-producing country (Small multiple line chart)" /></noscript>
-</div>
-        <p style="margin-top: 2em;">Poland's wine production has grown steadily since 2009, with one exception: the 2017-18 season, 
-            when poor weather conditions battered vineyards across Europe. Italy, France and Spain saw <a href="https://www.oiv.int/public/medias/5681/en-communiqu-depresse-octobre-2017.pdf">similar drops</a>.
+        <p>With increasingly favorable conditions, a new generation of winemakers is driving the expansion of vineyards
+            and the shift to wine grapes in Poland.
 </p>
 
-        <p>In 2009, Poland's <a href="https://notesfrompoland.com/2021/11/19/whites-and-reds-a-guide-to-polish-wine/#:~:text=Vineyards%20were%20once%20widespread%20in,the%20figure%20now%20is%20380.&text=Registered%20vineyards%20in%20Poland%20occupy,wine%20is%20increasing%20in%20popularity.">first legal commercial wine</a> reached the market. 
-            The milestone followed regulatory reforms that dismantled restrictive laws which had prevented homegrown winemakers 
-            from selling their bottles. The same year 21 vineyards declared commercial production.
-</p>
     </div>
 
-<figure class="full-width">
-    <img src="https://images.unsplash.com/photo-1701395467904-d0d9427bc47a?w=1600&q=85&auto=format&fit=crop"
-        alt="A long row of wine barrels in a cellar"
-        style="width: 100%; height: 350px; object-fit: cover; object-position: center; display: block;">
-    <figcaption>Photo by Barth Bailey / Unsplash</figcaption>
-</figure>
+<div class="photo-break-wrapper"><div class="photo-break"></div></div>
+<p class="photo-break-credit">Photo by Barth Bailey / Unsplash</p>
 
     <div class="content">
 
@@ -228,6 +280,19 @@
     <div class="footer">
         <p>&copy; 2026 &mdash; Luiza Swierzawska</p>
     </div>
+    <script>
+        const wrapper = document.querySelector('.photo-break-wrapper');
+        const inner = document.querySelector('.photo-break');
+
+        function updateParallax() {
+            const rect = wrapper.getBoundingClientRect();
+            const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+            inner.style.transform = `translateY(${(progress - 0.5) * 200}px)`;
+        }
+
+        window.addEventListener('scroll', updateParallax, { passive: true });
+        updateParallax();
+    </script>
 </body>
 
 </html>
